@@ -37,6 +37,7 @@ import br.com.alura.carteira.modelo.TipoTransacao;
 import br.com.alura.carteira.modelo.Transacao;
 import br.com.alura.carteira.modelo.Usuario;
 import br.com.alura.carteira.service.TransacaoService;
+import springfox.documentation.annotations.ApiIgnore;
 
 //@Controller
 @RestController //aqui eh igual o controller, mas ja com a tag responseBody , entao nao preciso ficar usando a tag responseBody em todos os métodos
@@ -51,7 +52,7 @@ public class TransacaoController {
 	
 	@GetMapping // (productes = MediaType.APPLICATION_XML_VALUE) se quisesse devolver xml
 //	@ResponseBody //falando para o Spring devolver a resposta no corpo, se nao ele acharia que a string que eu to passando no retorno é uma pagina html
-	public Page<TransacaoDto> listar(@PageableDefault(size = 10) Pageable paginacao, @AuthenticationPrincipal Usuario logado) { //essa @authenticationprincipal anotacao eh para avisar ao spring pegar o usuario que foi setado na sessao da request e trazer ele pra ca, ele nao esta sendo enviado como parametro por nós e sim pelo spring
+	public Page<TransacaoDto> listar(@PageableDefault(size = 10) Pageable paginacao, @ApiIgnore @AuthenticationPrincipal Usuario logado) { //essa @authenticationprincipal anotacao eh para avisar ao spring pegar o usuario que foi setado na sessao da request e trazer ele pra ca, ele nao esta sendo enviado como parametro por nós e sim pelo spring // o apiignore é para o swagger ignorar esse param de authenticacao pois isso nao eh enviado pelo usuario ou front, é feito pelo proprio spring
 //		List<TransacaoDto> transacoesDto = new ArrayList<>();
 //		for(Transacao transacao : transacoes) {
 //			TransacaoDto dto = new TransacaoDto();

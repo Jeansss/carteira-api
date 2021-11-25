@@ -50,6 +50,8 @@ public class Transacao {
 //	  @JoinColumn(name = "id_usuario") //para mudar o nome da coluna, e essa é uma anotacao somente para colunas que sao de relacionamento com outras tabelas.  se eu nao quisesse mudar o nome da coluna ela seria usuario_id, pois ele pega o nome do atributo e concatena com o primeiro atributo da classe usuario
 	  @ManyToOne //para o jpa saber que existe um relacionamento aqui, ja que a classe Usuario tbm é uma entidade, e essa notação é muitos para um, pois poderão haver muitras transacoes para um usuario.
 	  private Usuario usuario;
+	  
+	  private BigDecimal imposto; //novo atributo e a jpa ja assume que la no bd vai haver uma coluna chamada imposto, agora preciso criar uma nova migration para criar essa coluna no banco
 
 //	  public Transacao(){}
 

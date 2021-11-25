@@ -36,6 +36,9 @@ class TransacaoServiceTest {
 	@Mock
 	private ModelMapper modelMapper;
 	
+	@Mock
+	private CalculadoraDeImpostoService calculadoraDeImpostoService;
+	
 	private Usuario logado;
 	
 	@BeforeEach
@@ -78,7 +81,8 @@ class TransacaoServiceTest {
 				transacao.getTicker(),
 				transacao.getPreco(),
 				transacao.getQuantidade(),
-				transacao.getTipo()
+				transacao.getTipo(),
+				BigDecimal.ZERO
 				));
 		
 		
