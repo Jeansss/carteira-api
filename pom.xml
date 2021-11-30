@@ -97,6 +97,15 @@
 	    <artifactId>jjwt</artifactId>
 	    <version>0.9.1</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+	<dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <scope>test</scope>
+	    <version>1.4.199</version>
+	</dependency>
+
 		
 		
 		
