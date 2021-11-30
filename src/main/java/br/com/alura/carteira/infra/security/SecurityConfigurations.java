@@ -48,7 +48,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception { //sobrescrevendo esse método nos desabilitamos a proteção do csrf token para poder fazer requests de post,put.. mas mantém as outras configs
 		http
 		.authorizeRequests()
-		.antMatchers(HttpMethod.POST, "/auth").permitAll()
+		.antMatchers(HttpMethod.POST, "/auth", "/usuarios").permitAll()
 		.antMatchers(HttpMethod.GET, "/home").permitAll()
 		.antMatchers("/usuarios/**").hasRole("ADMIN") //O SPRING AGORA PASSA A OLHAR QUAL O PERFIL DESSE USUARIO, SE ELE TIVER ESSE PERFIL DE ROLE ADMIN ENTAO PODE CHAMAR ESSA REQUEST DE USUARIOS
 		.anyRequest().authenticated() //todas requestes tem de ser autenticadas

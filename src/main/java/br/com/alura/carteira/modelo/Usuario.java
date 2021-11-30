@@ -40,6 +40,7 @@ public class Usuario implements UserDetails { //necessário implementar a interf
 	private String nome;
 	private String login;
 	private String senha;
+	private String email;
 	
 	@ManyToMany //muitos para muitos, muitos perfis para muitos usuarios ou muitos usuarios para mtos perfis
 	@JoinTable(name = "perfis_usuarios",
