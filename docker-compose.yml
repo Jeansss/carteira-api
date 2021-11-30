@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  carteira_database:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5433:5432
+    expose:
+      - 5432
+    env_file:
+      - carteira_database.env
+
+  carteira_app:
+    image: alura/carteira-api2
+    restart: always
+    ports:
+      - 8089:8089
+    depends_on:
+      - carteira_database
+    env_file:
+      - carteira_app.env 
