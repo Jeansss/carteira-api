@@ -49,6 +49,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers(HttpMethod.POST, "/auth").permitAll()
+		.antMatchers(HttpMethod.GET, "/home").permitAll()
 		.antMatchers("/usuarios/**").hasRole("ADMIN") //O SPRING AGORA PASSA A OLHAR QUAL O PERFIL DESSE USUARIO, SE ELE TIVER ESSE PERFIL DE ROLE ADMIN ENTAO PODE CHAMAR ESSA REQUEST DE USUARIOS
 		.anyRequest().authenticated() //todas requestes tem de ser autenticadas
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //dizendo ao spring que o gerenciamento de sessao deve ser o statless, ou seja quando alguem fizer login nao é pra guardr jsession id nem sessao do lado dos server

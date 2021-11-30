@@ -52,6 +52,6 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "APP_NAME"
-          heroku_email: "USER_EMAIL"
+          heroku_app_name: "carteira-api-jean"
+          heroku_email: "jeans_bs@outlook.com"
           usedocker: true
